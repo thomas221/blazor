@@ -1,0 +1,23 @@
+﻿@page "/counter"
+
+<!------------------------------- html -->
+<h1>Counter</h1>
+
+<p>Current count: @StartValue</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+<!--------------------- C# -->
+@code {
+    //field-variabelen
+    private int currentCount = 17;
+
+    //properties
+    [Parameter]
+    public int StartValue { get; set; } = 0;
+
+    //methodes
+    private void IncrementCount()
+    {
+        StartValue++;
+    }
+}

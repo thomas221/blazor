@@ -1,0 +1,32 @@
+﻿@page "/TodoItems"
+@using Models
+
+<h3>TodoItems</h3>
+<hr />
+
+<ul>
+    @foreach (var todoItem in todoItems)
+    {
+        <li>@todoItem.Title</li>
+    }
+</ul>
+
+@code {
+
+    //fields
+    private List<TodoItem> todoItems = new List<TodoItem>();
+
+    //LifeCycle Method
+    protected override void OnInitialized()
+    {
+        //Add Demo Data
+        todoItems.Add(new TodoItem() { Title = "Water halen", IsDone = false });
+        todoItems.Add(new TodoItem() { Title = "Bier halen", IsDone = false });
+        todoItems.Add(new TodoItem() { Title = "Wijn halen", IsDone = false });
+
+        //Info
+        Console.WriteLine("Demo Items Added ...");
+
+
+    }
+}
